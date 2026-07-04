@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COG MPDSR — Automated Alert Email Set (illustrative)</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; background:#ECEAE3; color:#2C2C2A; margin:0; padding:28px 20px; line-height:1.5; }
+  .wrap { max-width:680px; margin:0 auto; }
+  .page-title { font-size:20px; font-weight:600; margin:0 0 4px; }
+  .page-note { font-size:13px; color:#5F5E5A; margin:0 0 26px; line-height:1.6; }
+  .level-label { font-size:13px; font-weight:600; color:#5F5E5A; margin:0 0 8px 2px; }
+  .email { background:#fff; border:0.5px solid rgba(0,0,0,0.14); border-radius:12px; overflow:hidden; margin-bottom:30px; }
+  .tricolor { display:flex; height:4px; }
+  .tricolor span { flex:1; }
+  .hdr-meta { padding:12px 20px; border-bottom:0.5px solid rgba(0,0,0,0.10); }
+  .hdr-meta table { width:100%; font-family:"Courier New", monospace; font-size:12px; color:#5F5E5A; border-collapse:collapse; }
+  .hdr-meta td { padding:1px 0; }
+  .hdr-meta .k { width:62px; color:#888780; }
+  .hdr-meta .v { color:#2C2C2A; }
+  .hdr-band { padding:14px 20px; background:#F6F5F0; border-bottom:0.5px solid rgba(0,0,0,0.10); }
+  .org { font-size:16px; font-weight:500; }
+  .org-sub { font-size:13px; color:#5F5E5A; }
+  .body { padding:20px; }
+  .sal { margin:0 0 10px; font-size:16px; }
+  .lead { margin:0 0 14px; font-size:16px; line-height:1.7; }
+  .illus { display:inline-block; font-size:12px; color:#888780; border:0.5px solid rgba(0,0,0,0.14); border-radius:8px; padding:3px 10px; margin-bottom:16px; }
+  .metrics { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; margin-bottom:18px; }
+  .metric { background:#F6F5F0; border-radius:8px; padding:14px 16px; }
+  .m-label { font-size:13px; color:#5F5E5A; margin-bottom:4px; }
+  .m-value { font-size:24px; font-weight:500; color:#2C2C2A; }
+  .m-sub { font-size:12px; margin-top:2px; }
+  .callout { border-radius:8px; padding:14px 16px; margin-bottom:18px; }
+  .callout.warn { background:#FAEEDA; border:0.5px solid #EF9F27; }
+  .callout.info { background:#E6F1FB; border:0.5px solid #85B7EB; }
+  .c-head { font-size:14px; font-weight:500; margin-bottom:8px; }
+  .warn-h { color:#854F0B; }
+  .info-h { color:#185FA5; margin-bottom:6px; }
+  .c-body { font-size:14px; line-height:1.7; color:#2C2C2A; }
+  .a-line { margin-bottom:5px; }
+  .a-line:last-child { margin-bottom:0; }
+  .dot { color:#888780; margin-right:7px; }
+  .pend { font-size:11px; color:#888780; border:0.5px solid rgba(0,0,0,0.14); border-radius:6px; padding:1px 6px; margin-left:4px; white-space:nowrap; }
+  .cta { display:inline-flex; align-items:center; gap:6px; text-decoration:none; font-size:14px; font-weight:500; color:#185FA5; background:#E6F1FB; border:0.5px solid #85B7EB; border-radius:8px; padding:10px 16px; }
+  .foot { padding:14px 20px; border-top:0.5px solid rgba(0,0,0,0.10); background:#F6F5F0; }
+  .f1 { margin:0 0 6px; font-size:12px; line-height:1.6; color:#5F5E5A; }
+  .f2 { margin:0; font-size:11px; color:#888780; line-height:1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="page-title">COG MPDSR — automated alert email set</div>
+  <div class="page-note">Six customized monthly alerts, one per recipient level, dispatched on the 20th of each month following the 16th data extraction. Each carries only that level's framework row, filtered to what changed. Figures are illustrative; values populate from the dashboard.</div>
+  <div class="level-label">Governor — high-level oversight alert</div>
+<div class="email">
+  <div class="tricolor"><span style="background:#000000"></span><span style="background:#BB0000"></span><span style="background:#006600"></span></div>
+  <div class="hdr-meta">
+    <table>
+      <tr><td class="k">From</td><td class="v">COG MPDSR Dashboard &lt;alerts@cog.go.ke&gt;</td></tr>
+      <tr><td class="k">To</td><td>Your Excellency, the Governor</td></tr>
+      <tr><td class="k">Date</td><td>20 May 2026</td></tr>
+      <tr><td class="k" style="vertical-align:top">Subject</td><td class="v">COG MPDSR alert — Sample County — May 2026: maternal deaths up this quarter</td></tr>
+    </table>
+  </div>
+  <div class="hdr-band">
+    <div class="org">Council of Governors</div>
+    <div class="org-sub">Inter-County MPDSR — automated monthly alert</div>
+  </div>
+  <div class="body">
+    <p class="sal">Your Excellency,</p>
+    <p class="lead">Your monthly maternal and perinatal mortality alert for Sample County, drawn from the COG MPDSR Dashboard, data extracted on 16 May 2026.</p>
+    <div class="illus">Illustrative sample figures</div>
+    <div class="metrics">
+      <div class="metric">
+      <div class="m-label">Maternal deaths, this quarter</div>
+      <div class="m-value">6</div>
+      <div class="m-sub" style="color:#A32D2D">↑ up from 3 last quarter</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Perinatal deaths, this quarter</div>
+      <div class="m-value">14</div>
+      <div class="m-sub" style="color:#3B6D11">↓ down from 17</div>
+    </div>
+<div class="metric">
+      <div class="m-label">County MMR, 12-month rolling</div>
+      <div class="m-value">380</div>
+      <div class="m-sub" style="color:#5F5E5A">per 100,000 · 12th of 47 counties</div>
+    </div>
+    </div>
+    <div class="callout warn">
+      <div class="c-head warn-h">Needs your attention</div>
+      <div class="c-body">
+        <div class="a-line"><span class="dot">&#8226;</span>Maternal deaths rose this quarter, against a national trend that is falling.</div>
+<div class="a-line"><span class="dot">&#8226;</span>Two sub-counties account for 60% of the county's deaths.</div>
+<div class="a-line"><span class="dot">&#8226;</span>One sub-county MPDSR committee did not meet last month.</div>
+      </div>
+    </div>
+    <div class="callout info">
+      <div class="c-head info-h">What this asks of you</div>
+      <div class="c-body">Consider raising maternal and newborn survival at the next county leadership and intergovernmental forum, and confirming the financing and partnerships behind the county's response.</div>
+    </div>
+    <a class="cta" href="https://mpdsr.cog.go.ke">Open the Sample County dashboard &#8599;</a>
+  </div>
+  <div class="foot">
+    <p class="f1">Automated alert from the COG MPDSR Dashboard · Inter-County MPDSR Initiative. Data as at 16 May 2026 · next alert 20 June 2026.</p>
+    <p class="f2">Figures shown are illustrative sample data; values populate automatically from the dashboard. Lines marked &ldquo;pending capture&rdquo; activate as the section&nbsp;4 data (modifiable factors, review timeliness, recommendation status, recurrence) comes online.</p>
+  </div>
+</div>
+<div class="level-label">CECM (Health) — policy and budget alert</div>
+<div class="email">
+  <div class="tricolor"><span style="background:#000000"></span><span style="background:#BB0000"></span><span style="background:#006600"></span></div>
+  <div class="hdr-meta">
+    <table>
+      <tr><td class="k">From</td><td class="v">COG MPDSR Dashboard &lt;alerts@cog.go.ke&gt;</td></tr>
+      <tr><td class="k">To</td><td>County Executive Committee Member for Health</td></tr>
+      <tr><td class="k">Date</td><td>20 May 2026</td></tr>
+      <tr><td class="k" style="vertical-align:top">Subject</td><td class="v">COG MPDSR alert — Sample County — May 2026: leading cause shifted; review cadence behind</td></tr>
+    </table>
+  </div>
+  <div class="hdr-band">
+    <div class="org">Council of Governors</div>
+    <div class="org-sub">Inter-County MPDSR — automated monthly alert</div>
+  </div>
+  <div class="body">
+    <p class="sal">Dear CECM for Health,</p>
+    <p class="lead">Your monthly maternal and perinatal mortality alert for Sample County, drawn from the COG MPDSR Dashboard, data extracted on 16 May 2026.</p>
+    <div class="illus">Illustrative sample figures</div>
+    <div class="metrics">
+      <div class="metric">
+      <div class="m-label">Maternal deaths, this quarter</div>
+      <div class="m-value">6</div>
+      <div class="m-sub" style="color:#A32D2D">↑ up from 3 last quarter</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Leading maternal cause</div>
+      <div class="m-value">PPH</div>
+      <div class="m-sub" style="color:#5F5E5A">9 of 18 deaths this year</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Burden concentration</div>
+      <div class="m-value">60%</div>
+      <div class="m-sub" style="color:#5F5E5A">in 2 of 12 sub-counties</div>
+    </div>
+    </div>
+    <div class="callout warn">
+      <div class="c-head warn-h">Needs your attention</div>
+      <div class="c-body">
+        <div class="a-line"><span class="dot">&#8226;</span>Postpartum haemorrhage has overtaken eclampsia as the leading cause this quarter.</div>
+<div class="a-line"><span class="dot">&#8226;</span>Blood unavailability cited in several reviewed facility deaths. <span class="pend">pending capture</span></div>
+<div class="a-line"><span class="dot">&#8226;</span>The county held 1 review meeting against 6 deaths and 4 near-misses last month.</div>
+      </div>
+    </div>
+    <div class="callout info">
+      <div class="c-head info-h">What this asks of you</div>
+      <div class="c-body">Review whether the budget and policy levers — blood supply, magnesium sulphate and oxytocin stocking, and staffing at the high-burden facilities — are adequate, and confirm what to fund or change in the next cycle.</div>
+    </div>
+    <a class="cta" href="https://mpdsr.cog.go.ke">Open the CECM dashboard view &#8599;</a>
+  </div>
+  <div class="foot">
+    <p class="f1">Automated alert from the COG MPDSR Dashboard · Inter-County MPDSR Initiative. Data as at 16 May 2026 · next alert 20 June 2026.</p>
+    <p class="f2">Figures shown are illustrative sample data; values populate automatically from the dashboard. Lines marked &ldquo;pending capture&rdquo; activate as the section&nbsp;4 data (modifiable factors, review timeliness, recommendation status, recurrence) comes online.</p>
+  </div>
+</div>
+<div class="level-label">COH — operational, facility-level alert</div>
+<div class="email">
+  <div class="tricolor"><span style="background:#000000"></span><span style="background:#BB0000"></span><span style="background:#006600"></span></div>
+  <div class="hdr-meta">
+    <table>
+      <tr><td class="k">From</td><td class="v">COG MPDSR Dashboard &lt;alerts@cog.go.ke&gt;</td></tr>
+      <tr><td class="k">To</td><td>Chief Officer for Health</td></tr>
+      <tr><td class="k">Date</td><td>20 May 2026</td></tr>
+      <tr><td class="k" style="vertical-align:top">Subject</td><td class="v">COG MPDSR alert — Sample County — May 2026: 3 facilities flagged</td></tr>
+    </table>
+  </div>
+  <div class="hdr-band">
+    <div class="org">Council of Governors</div>
+    <div class="org-sub">Inter-County MPDSR — automated monthly alert</div>
+  </div>
+  <div class="body">
+    <p class="sal">Dear Chief Officer for Health,</p>
+    <p class="lead">Your monthly maternal and perinatal mortality alert for Sample County, drawn from the COG MPDSR Dashboard, data extracted on 16 May 2026.</p>
+    <div class="illus">Illustrative sample figures</div>
+    <div class="metrics">
+      <div class="metric">
+      <div class="m-label">Highest rate-adjusted facility</div>
+      <div class="m-value">8.1</div>
+      <div class="m-sub" style="color:#A32D2D">per 1,000 deliveries · County Referral</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Facilities flagged this month</div>
+      <div class="m-value">3</div>
+      <div class="m-sub" style="color:#5F5E5A">above peer threshold</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Deaths this quarter</div>
+      <div class="m-value">6 / 14</div>
+      <div class="m-sub" style="color:#5F5E5A">maternal / perinatal</div>
+    </div>
+    </div>
+    <div class="callout warn">
+      <div class="c-head warn-h">Needs your attention</div>
+      <div class="c-body">
+        <div class="a-line"><span class="dot">&#8226;</span>County Referral has the highest rate-adjusted maternal mortality this quarter.</div>
+<div class="a-line"><span class="dot">&#8226;</span>Sub-County Hospital B's rate rose after last quarter — the earlier fix may not have held.</div>
+<div class="a-line"><span class="dot">&#8226;</span>Staffing gaps and commodity stockouts cited at the flagged facilities. <span class="pend">pending capture</span></div>
+      </div>
+    </div>
+    <div class="callout info">
+      <div class="c-head info-h">What this asks of you</div>
+      <div class="c-body">Direct an operational response to the flagged facilities this month — staffing cover, commodity resupply, and referral support — and confirm whether last quarter's fixes held.</div>
+    </div>
+    <a class="cta" href="https://mpdsr.cog.go.ke">Open the facility view &#8599;</a>
+  </div>
+  <div class="foot">
+    <p class="f1">Automated alert from the COG MPDSR Dashboard · Inter-County MPDSR Initiative. Data as at 16 May 2026 · next alert 20 June 2026.</p>
+    <p class="f2">Figures shown are illustrative sample data; values populate automatically from the dashboard. Lines marked &ldquo;pending capture&rdquo; activate as the section&nbsp;4 data (modifiable factors, review timeliness, recommendation status, recurrence) comes online.</p>
+  </div>
+</div>
+<div class="level-label">CDH — clinical quality alert</div>
+<div class="email">
+  <div class="tricolor"><span style="background:#000000"></span><span style="background:#BB0000"></span><span style="background:#006600"></span></div>
+  <div class="hdr-meta">
+    <table>
+      <tr><td class="k">From</td><td class="v">COG MPDSR Dashboard &lt;alerts@cog.go.ke&gt;</td></tr>
+      <tr><td class="k">To</td><td>County Director of Health</td></tr>
+      <tr><td class="k">Date</td><td>20 May 2026</td></tr>
+      <tr><td class="k" style="vertical-align:top">Subject</td><td class="v">COG MPDSR alert — Sample County — May 2026: PPH leading; care-quality gaps flagged</td></tr>
+    </table>
+  </div>
+  <div class="hdr-band">
+    <div class="org">Council of Governors</div>
+    <div class="org-sub">Inter-County MPDSR — automated monthly alert</div>
+  </div>
+  <div class="body">
+    <p class="sal">Dear County Director of Health,</p>
+    <p class="lead">Your monthly maternal and perinatal mortality alert for Sample County, drawn from the COG MPDSR Dashboard, data extracted on 16 May 2026.</p>
+    <div class="illus">Illustrative sample figures</div>
+    <div class="metrics">
+      <div class="metric">
+      <div class="m-label">Leading clinical cause</div>
+      <div class="m-value">PPH</div>
+      <div class="m-sub" style="color:#5F5E5A">9 maternal deaths this year</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Guideline concordance, MgSO₄</div>
+      <div class="m-value">62%</div>
+      <div class="m-sub" style="color:#888780">of eclampsia cases reviewed <span class="pend">pending capture</span></div>
+    </div>
+<div class="metric">
+      <div class="m-label">Deaths reviewed</div>
+      <div class="m-value">4 of 6</div>
+      <div class="m-sub" style="color:#5F5E5A">this quarter</div>
+    </div>
+    </div>
+    <div class="callout warn">
+      <div class="c-head warn-h">Needs your attention</div>
+      <div class="c-body">
+        <div class="a-line"><span class="dot">&#8226;</span>Postpartum haemorrhage remains the leading clinical cause.</div>
+<div class="a-line"><span class="dot">&#8226;</span>Case reviews flag delayed or incomplete haemorrhage management in several deaths. <span class="pend">pending capture</span></div>
+<div class="a-line"><span class="dot">&#8226;</span>Magnesium sulphate use for eclampsia is below target in reviewed cases. <span class="pend">pending capture</span></div>
+      </div>
+    </div>
+    <div class="callout info">
+      <div class="c-head info-h">What this asks of you</div>
+      <div class="c-body">Target clinical mentorship and quality improvement at the leading causes and the facilities where care is breaking down — PPH management and magnesium sulphate use — and ensure audit recommendations reach the wards.</div>
+    </div>
+    <a class="cta" href="https://mpdsr.cog.go.ke">Open the clinical view &#8599;</a>
+  </div>
+  <div class="foot">
+    <p class="f1">Automated alert from the COG MPDSR Dashboard · Inter-County MPDSR Initiative. Data as at 16 May 2026 · next alert 20 June 2026.</p>
+    <p class="f2">Figures shown are illustrative sample data; values populate automatically from the dashboard. Lines marked &ldquo;pending capture&rdquo; activate as the section&nbsp;4 data (modifiable factors, review timeliness, recommendation status, recurrence) comes online.</p>
+  </div>
+</div>
+<div class="level-label">CHRIO — data quality alert</div>
+<div class="email">
+  <div class="tricolor"><span style="background:#000000"></span><span style="background:#BB0000"></span><span style="background:#006600"></span></div>
+  <div class="hdr-meta">
+    <table>
+      <tr><td class="k">From</td><td class="v">COG MPDSR Dashboard &lt;alerts@cog.go.ke&gt;</td></tr>
+      <tr><td class="k">To</td><td>County Health Records and Information Officer</td></tr>
+      <tr><td class="k">Date</td><td>20 May 2026</td></tr>
+      <tr><td class="k" style="vertical-align:top">Subject</td><td class="v">COG MPDSR alert — Sample County — May 2026: completeness down; 4 facilities not reporting</td></tr>
+    </table>
+  </div>
+  <div class="hdr-band">
+    <div class="org">Council of Governors</div>
+    <div class="org-sub">Inter-County MPDSR — automated monthly alert</div>
+  </div>
+  <div class="body">
+    <p class="sal">Dear County Health Records and Information Officer,</p>
+    <p class="lead">Your monthly data-quality alert for Sample County, drawn from the COG MPDSR Dashboard, data extracted on 16 May 2026.</p>
+    <div class="illus">Illustrative sample figures</div>
+    <div class="metrics">
+      <div class="metric">
+      <div class="m-label">Reporting completeness</div>
+      <div class="m-value">88%</div>
+      <div class="m-sub" style="color:#A32D2D">↓ down from 94%</div>
+    </div>
+<div class="metric">
+      <div class="m-label">On-time submission</div>
+      <div class="m-value">76%</div>
+      <div class="m-sub" style="color:#5F5E5A">of expected reports</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Validation corrections</div>
+      <div class="m-value">12</div>
+      <div class="m-sub" style="color:#5F5E5A">this period</div>
+    </div>
+    </div>
+    <div class="callout warn">
+      <div class="c-head warn-h">Needs your attention</div>
+      <div class="c-body">
+        <div class="a-line"><span class="dot">&#8226;</span>Reporting completeness fell this period — 4 facilities did not report.</div>
+<div class="a-line"><span class="dot">&#8226;</span>Suspected under-reporting: facility deaths below expected in one sub-county. <span class="pend">pending capture</span></div>
+<div class="a-line"><span class="dot">&#8226;</span>3 maternal deaths were notified beyond the 48-hour standard.</div>
+      </div>
+    </div>
+    <div class="callout info">
+      <div class="c-head info-h">What this asks of you</div>
+      <div class="c-body">Follow up the non-reporting facilities and late notifiers before the next extraction, and confirm the suspected under-reporting in the flagged sub-county.</div>
+    </div>
+    <a class="cta" href="https://mpdsr.cog.go.ke">Open the data-quality view &#8599;</a>
+  </div>
+  <div class="foot">
+    <p class="f1">Automated alert from the COG MPDSR Dashboard · Inter-County MPDSR Initiative. Data as at 16 May 2026 · next alert 20 June 2026.</p>
+    <p class="f2">Figures shown are illustrative sample data; values populate automatically from the dashboard. Lines marked &ldquo;pending capture&rdquo; activate as the section&nbsp;4 data (modifiable factors, review timeliness, recommendation status, recurrence) comes online.</p>
+  </div>
+</div>
+<div class="level-label">CRHC — review-cycle and response alert  (recommended addition; not in the current COG recipient list)</div>
+<div class="email">
+  <div class="tricolor"><span style="background:#000000"></span><span style="background:#BB0000"></span><span style="background:#006600"></span></div>
+  <div class="hdr-meta">
+    <table>
+      <tr><td class="k">From</td><td class="v">COG MPDSR Dashboard &lt;alerts@cog.go.ke&gt;</td></tr>
+      <tr><td class="k">To</td><td>County Reproductive Health Coordinator</td></tr>
+      <tr><td class="k">Date</td><td>20 May 2026</td></tr>
+      <tr><td class="k" style="vertical-align:top">Subject</td><td class="v">COG MPDSR alert — Sample County — May 2026: 2 reviews overdue; a factor is recurring</td></tr>
+    </table>
+  </div>
+  <div class="hdr-band">
+    <div class="org">Council of Governors</div>
+    <div class="org-sub">Inter-County MPDSR — automated monthly alert</div>
+  </div>
+  <div class="body">
+    <p class="sal">Dear County Reproductive Health Coordinator,</p>
+    <p class="lead">Your monthly MPDSR review-cycle alert for Sample County, drawn from the COG MPDSR Dashboard, data extracted on 16 May 2026.</p>
+    <div class="illus">Illustrative sample figures</div>
+    <div class="metrics">
+      <div class="metric">
+      <div class="m-label">Reviews completed</div>
+      <div class="m-value">4 of 6</div>
+      <div class="m-sub" style="color:#5F5E5A">maternal deaths</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Overdue reviews</div>
+      <div class="m-value">2</div>
+      <div class="m-sub" style="color:#A32D2D">beyond target</div>
+    </div>
+<div class="metric">
+      <div class="m-label">Recommendations implemented</div>
+      <div class="m-value">43%</div>
+      <div class="m-sub" style="color:#888780">of those made <span class="pend">pending capture</span></div>
+    </div>
+    </div>
+    <div class="callout warn">
+      <div class="c-head warn-h">Needs your attention</div>
+      <div class="c-body">
+        <div class="a-line"><span class="dot">&#8226;</span>2 maternal deaths remain unreviewed beyond the target window.</div>
+<div class="a-line"><span class="dot">&#8226;</span>5 recommendations from prior reviews are overdue or not implemented. <span class="pend">pending capture</span></div>
+<div class="a-line"><span class="dot">&#8226;</span>Recurrence: postpartum haemorrhage, flagged in earlier reviews, has reappeared in a new death. <span class="pend">pending capture</span></div>
+      </div>
+    </div>
+    <div class="callout info">
+      <div class="c-head info-h">What this asks of you</div>
+      <div class="c-body">Clear the review backlog, push the overdue recommendations to implementation with their assigned owners, and escalate any factor that is recurring.</div>
+    </div>
+    <a class="cta" href="https://mpdsr.cog.go.ke">Open the review-cycle view &#8599;</a>
+  </div>
+  <div class="foot">
+    <p class="f1">Automated alert from the COG MPDSR Dashboard · Inter-County MPDSR Initiative. Data as at 16 May 2026 · next alert 20 June 2026.</p>
+    <p class="f2">Figures shown are illustrative sample data; values populate automatically from the dashboard. Lines marked &ldquo;pending capture&rdquo; activate as the section&nbsp;4 data (modifiable factors, review timeliness, recommendation status, recurrence) comes online.</p>
+  </div>
+</div>
+</div>
+</body>
+</html>
